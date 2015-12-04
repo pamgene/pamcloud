@@ -1,0 +1,10 @@
+Package: PamCloud
+Type: Package
+Title: Downloading files and installing packages frpm the PamCloud.
+Version: 1.2
+Date: 2015-01-28
+Author: Rik de Wijn
+Maintainer: Rik de Wijn <rdwijn@pamgene.com>
+Description: some utilities for downloading files and installing packages from the pamcloud, this package was built using R.3.1.2.
+License: (c) PamGene International BV 2013
+Suggests: tcltk, RCurl
