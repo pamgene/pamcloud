@@ -1,10 +1,18 @@
+library(tcltk)
+library(RCurl)
 
-PamCloud.getBinaryURL= function(url = "https://pamcloud.pamgene.com/jackrabbit/repository/default/PamCloud/BioNavigator/Resources/readme.txt", credentials = login.dialog()){
-  checkpack("RCurl")
+
+PamCloud.getBinaryURL= function(url = "https://pamcloud.pamgene.com/jackrabbit/repository/default/PamCloud/BioNavigator/Resources/readme.txt",
+                                credentials = login.dialog()){
   if(!is.null(credentials)){
-    aFile = getBinaryURL(url, userpwd = paste(credentials$user,credentials$pw, sep = ":"), ssl.verifypeer = FALSE)
+    aFile = getBinaryURL(url, 
+                         userpwd = paste(credentials$user,
+                                              credentials$pw,
+                                              sep = ":"),
+                         ssl.verifypeer = FALSE)
   } else{
-    aFile = getBinaryURL(url, ssl.verifypeer = FALSE)
+    aFile = getBinaryURL(url,
+                         ssl.verifypeer = FALSE)
   }
 return(aFile)
 }
@@ -35,7 +43,6 @@ PamCloud.installPackage = function(packageUrl, tmpDir = "C:\\temp"){
 }
 
 login.dialog = function(){
-  checkpack("tcltk")
   credentials = list(user = "PamCloud User Name", pw = "pass") 
   onok = function(){tkcget
                     tkdestroy(tt)
@@ -59,16 +66,7 @@ login.dialog = function(){
   credentials$pw = tclvalue(pwVal)
   return(credentials)
 }
-
-checkpack = function(libstr, repos = "http://cran.rstudio.com"){
-  # libstr can be an array of strings with multiple packages
-  for(i in 1:length(libstr)){
-    if (!(libstr[i] %in% installed.packages())){
-      install.packages(libstr[i], dependencies = TRUE, repos = repos)
-    }
-    library(libstr[i], character.only = TRUE)
-  }
-}
+ 
 
 
 
