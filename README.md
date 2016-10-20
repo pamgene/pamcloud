@@ -11,3 +11,6 @@ devtools::install_bitbucket("bnoperator/pgpamcloud")
 ```
 bntools::deployGitPackage('https://bitbucket.org/bnoperator/pgpamcloud.git', '1.3')
 ```
+# tag
+```
+git tag 1.4 -m "1.4" && git push --tags

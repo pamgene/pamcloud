@@ -1,8 +1,8 @@
 Package: PamCloud
 Type: Package
 Title: Downloading files and installing packages frpm the PamCloud.
-Version: 1.3
-Date: 2015-01-28
+Version: 1.4
+Date: 2016-10-19
 Author: Rik de Wijn
 Maintainer: Rik de Wijn <rdwijn@pamgene.com>
 Description: some utilities for downloading files and installing packages from
