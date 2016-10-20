@@ -3,7 +3,7 @@
 ## Instal
 
 ```
-devtools::install_bitbucket("bnoperator/pgmulticore")
+devtools::install_bitbucket("bnoperator/pgpamcloud")
 ```
 
 # Publish a package on pamagene R repository

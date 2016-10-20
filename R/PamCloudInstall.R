@@ -1,7 +1,7 @@
-library(tcltk)
-library(RCurl)
+#' @import tcltk
+#' @import RCurl
 
-
+#' @export
 PamCloud.getBinaryURL= function(url = "https://pamcloud.pamgene.com/jackrabbit/repository/default/PamCloud/BioNavigator/Resources/readme.txt",
                                 credentials = login.dialog()){
   if(!is.null(credentials)){
@@ -17,11 +17,14 @@ PamCloud.getBinaryURL= function(url = "https://pamcloud.pamgene.com/jackrabbit/r
 return(aFile)
 }
 
+#' @export
 PamCloud.checkAccess = function(credentials = login.dialog()){
   aFile = PamCloud.getBinaryURL(credentials = credentials)
   return(substring(rawToChar(aFile),1,33) == "<PamCloud Bionavigator Resources>")
 }
 
+
+#' @export
 PamCloud.installPackage = function(packageUrl, tmpDir = "C:\\temp"){
   credentials = login.dialog()
   if(!PamCloud.checkAccess(credentials)){
@@ -42,6 +45,7 @@ PamCloud.installPackage = function(packageUrl, tmpDir = "C:\\temp"){
   }
 }
 
+#' @export
 login.dialog = function(){
   credentials = list(user = "PamCloud User Name", pw = "pass") 
   onok = function(){tkcget
